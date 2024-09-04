@@ -1,0 +1,64 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+#root {
+    max-width: unset;
+    padding: 0rem;
+    margin: 0 unset;
+    text-align: unset;
+}
+
+hr {
+    backdrop-filter: blur(4.91866px);
+    border: 2px solid #363c43;
+}
+
+.slider-arrow {
+    width: 40px;
+    height: 40px;
+    color: white;
+    margin: 0 auto;
+    padding: 11px;
+    border: none;
+    border-radius: 50%;
+    background: linear-gradient(139.14deg, #303439 12.4%, #161718 94.96%);
+    box-shadow: -5px -3px 30px -10px #96bee7, 4px 5px 30px 5px #101213;
+    cursor: pointer;
+}
+
+.addImage {
+    color: white;
+    padding: 0px 20px;
+    border: none;
+    margin: auto 0;
+    height: 45px;
+    background: rgba(255, 255, 255, 0.03);
+    box-shadow: -0.5px -0.5px 6.9px rgba(255, 255, 255, 0.25),
+        9px 10px 7.1px rgba(0, 0, 0, 0.4),
+        inset 0px 0px 48.9064px rgba(255, 255, 255, 0.05),
+        inset 0px 3.26043px 3.26043px rgba(255, 255, 255, 0.15);
+    cursor: pointer;
+}
+
+.scrollbar-custom {
+    height: calc(100% - 30%);
+}
+
+.scrollbar-custom::-webkit-scrollbar {
+    width: 7px;
+}
+
+.scrollbar-custom::-webkit-scrollbar-thumb {
+    background-image: linear-gradient(177.32deg, #888989 5.6%, #4a4e54 93.28%);
+    width: 7px;
+    border-radius: 20px;
+}
+
+.scrollbar-custom::-webkit-scrollbar-track {
+    background-color: transparent;
+}
+
+.scrollbar-custom::-webkit-scrollbar-button {
+   height: 35%;
+}
