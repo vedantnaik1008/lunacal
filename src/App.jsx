@@ -1,6 +1,6 @@
 import './App.css'
 import LeftScreen from './components/LeftScreen';
-import RightWidget from './components/rightWidget';
+import RightWidget from './components/RightWidget';
 
 function App() {
     return (
