@@ -15,7 +15,7 @@ const initialImages = [
 
 const Gallery = () => {
     const [images, setImages] = useState(initialImages);
-    const [add, setAdd] = useState('/src/assets/Rectangle 5160.png');
+    const [add, setAdd] = useState(Reactangle);
     const [currentIndex, setCurrentIndex] = useState(0);
     const imagesRef = useRef(null);
 
