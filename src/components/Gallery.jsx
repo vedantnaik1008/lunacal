@@ -1,4 +1,4 @@
-import  { useCallback,  useRef, useState } from 'react';
+import  { useCallback,  useEffect,  useRef, useState } from 'react';
 import Qmark from '../assets/Vector.png';
 import Square from '../assets/Frame 1000002250.png';
 import Reactangle from '../assets/Rectangle 5160.png';
@@ -11,11 +11,6 @@ const initialImages = [
     Reactangle,
     Reactangle,
     Reactangle,
-    Reactangle,
-    Reactangle,
-    Reactangle,
-    Reactangle,
-    Reactangle
 ];
 
 const Gallery = () => {
@@ -38,7 +33,13 @@ const Gallery = () => {
         );
     }, [images.length]);
 
-  
+  useEffect(()=> {
+    const storeImages = sessionStorage.getItem('images')
+    if(storeImages){
+        const parsed = JSON.parse(storeImages)
+        setImages(parsed)
+    }
+  }, [])
     
  
 
@@ -53,6 +54,23 @@ const Gallery = () => {
         [nextSlide, prevSlide]
     );
 console.log(images);
+
+const addImages = () => {
+ images.push(add);
+ sessionStorage.setItem('images', JSON.stringify(images));
+ 
+ const BASE_URL =
+     // eslint-disable-next-line no-undef
+     process.env.NODE_ENV === 'production'
+         ? 'https://lunacal-green.vercel.app/'
+         : 'http://localhost:5173/';
+ window.location.replace(`${BASE_URL}`)
+ console.log(BASE_URL);
+ 
+ setCurrentIndex(images.length)
+}
+
+console.log(images.length);
 
 
     const touchEvents = useTouchEvents(onSwipe);
@@ -82,7 +100,7 @@ console.log(images);
                             Gallery
                         </button>
                         <div className='flex gap-8'>
-                            <button onClick={()=>{ images.push(add); }} className='addImage rounded-full text-[13px] font-bold flex items-center gap-1'>
+                            <button onClick={addImages} className='addImage rounded-full text-[13px] font-bold flex items-center gap-1'>
                                 <span className='text-lg'>+ </span>ADD IMAGE
                             </button>
 
