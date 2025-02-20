@@ -100,7 +100,9 @@ console.log(images.length);
                             Gallery
                         </button>
                         <div className='flex gap-8'>
-                            <button onClick={addImages} className='addImage rounded-full text-[13px] font-bold flex items-center gap-1'>
+                            <button
+                                onClick={addImages}
+                                className='addImage rounded-full text-[13px] font-bold flex items-center gap-1'>
                                 <span className='text-lg'>+ </span>ADD IMAGE
                             </button>
 
@@ -130,11 +132,11 @@ console.log(images.length);
                             {images.map((image, index) => (
                                 <div
                                     key={index}
-                                    className='w-full flex-shrink-0 md:w-1/3 flex '>
+                                    className='w-full flex-shrink-0 md:w-1/3 flex justify-center'>
                                     <img
                                         src={image}
                                         alt={`Rectangle ${index}`}
-                                        className='object-cover w-full md:w-[90%] '
+                                        className='object-cover w-full md:w-[90%] max-w-[200px] md:max-w-[160px]'
                                     />
                                 </div>
                             ))}
